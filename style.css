@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Accordion */
+.accordion{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Menu */
+.menu{
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* All Menu Items */
+.item{
+    border-top: 1px solid #d3237b;
+    overflow: hidden;
+}
+
+.btn{
+    display: block;
+    padding: 16px 20px;
+    background: #b80c62;
+    color: #fff;
+    position: relative;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #b80c62;
+    left: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+
+.btn i{
+    margin-right: 10px;
+}
+
+.sub-menu{
+    background: #333;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    max-height: 0;
+}
+
+.sub-menu a{
+    display: block;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 4px 0;
+    position: relative;
+}
+
+.sub-menu a::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #b80c62;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.sub-menu a:hover::before{
+    opacity: 1;
+}
+
+/* For Display Submenu According to URL # ID */
+.item:target .sub-menu{
+    max-height: 10rem;
+}
+
+
